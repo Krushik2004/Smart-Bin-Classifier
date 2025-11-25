@@ -102,7 +102,7 @@ Processing details:
 	•	Annotated bounding boxes are not provided.
 	•	Training a multi-class object detector (YOLO/Faster-RCNN) for all ASINs is impractical.
 
-3.2 Reformulating the Task
+### 3.2 Reformulating the Task
 
 Instead of “classifying the whole bin”, we treat the problem as:
 
