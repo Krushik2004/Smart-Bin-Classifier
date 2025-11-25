@@ -181,13 +181,13 @@ The Streamlit frontend simulates a small “ordering + validation” workflow.
 
 1.	Item Catalog Dropdown
    
-		•	Loads ~38k unique item names from data/unique_item_names.json.
-		•	Dropdown lets the user select one item at a time.
+-	Loads ~38k unique item names from data/unique_item_names.json.
+-	Dropdown lets the user select one item at a time.
 
 2.	Quantity Selector
    
-		•	A dropdown (1–20) for selecting quantity.
-		•	Max 10 unique items per order.
+-	A dropdown (1–20) for selecting quantity.
+-	Max 10 unique items per order.
 
 4.	Order Management
    
@@ -206,12 +206,12 @@ The Streamlit frontend simulates a small “ordering + validation” workflow.
 
 5.	Bin Image Display
    
-		•	Shows a randomly selected bin image under the results.
-		•	Displayed at a fixed width and height and centered in the layout.
+-	Shows a randomly selected bin image under the results.
+-	Displayed at a fixed width and height and centered in the layout.
 
 6.	Model Output Table
    
-		•	Columns: Item, Quantity, Match, Confidence
-		•	Match column shows:
-			•	✅ if model prediction ≥ 0.5
-			•	❌ otherwise
+- 	Columns: Item, Quantity, Match, Confidence
+- 	Match column shows:
+	•	✅ if model prediction ≥ 0.5
+	•	❌ otherwise
