@@ -22,7 +22,7 @@ This project addresses the following core objective:
 ### Key Goals
 
 1. **Understand the dataset & task**  
-   - Explore the Amazon-style bin image dataset (images + metadata).  
+   - Explore the Amazon Bin-Image Dataset (images + metadata).  
    - Understand the structure of bin contents and item-level metadata.
 
 2. **Build a multimodal model**  
