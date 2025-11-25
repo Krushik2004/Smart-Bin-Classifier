@@ -13,7 +13,7 @@ A multimodal AI system that verifies whether the contents of a warehouse bin ima
 
 **Deployed Streamlit Websit Link**: [Streamlit Website](https://smart-bin-classifier-iwiks75ayyfsekvms8nxgz.streamlit.app)
 
-**EDA Documentation Directory**: [EDA Documentation can be found here]
+**EDA Documentation Directory**: [EDA Documentation can be found here]()
 
 ---
 ## 1. Problem Statement & Objectives
@@ -30,7 +30,8 @@ This project addresses the following core objective:
 
 ## 2. Dataset & Preprocessing
 
-> ⚠️ Note: This project uses a **subset** of the original dataset for practicality (e.g., ~25k metadata files and a smaller subset of images for the demo UI).
+> ⚠️ Note: This project uses a **subset** of the original dataset for practicality (e.g., ~25k files).
+> The [downloader](./downloader/downloader.py) was used to download the subset of dataset for training. 
 
 ### 2.1 Source Data
 
@@ -178,7 +179,8 @@ The Streamlit frontend simulates a small “ordering + validation” workflow.
    
 		•	A dropdown (1–20) for selecting quantity.
 		•	Max 10 unique items per order.
-3.	Order Management
+
+4.	Order Management
    
 		•	“Add item” button:
 		•	Adds the current (item, quantity) pair to the order.
@@ -192,7 +194,8 @@ The Streamlit frontend simulates a small “ordering + validation” workflow.
 		•	Resets the order.
 		•	Clears the selected image and results.
 		•	Resets UI state (st.session_state).
-4.	Bin Image Display
+
+5.	Bin Image Display
    
 		•	Shows a randomly selected bin image under the results.
 		•	Displayed at a fixed width and height and centered in the layout.
