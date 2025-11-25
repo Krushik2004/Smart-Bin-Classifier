@@ -33,7 +33,7 @@ This project addresses the following core objective:
 ## 2. Dataset & Preprocessing
 
 > ⚠️ Note: This project uses a **subset** of the original dataset for practicality (e.g., ~25k files).
-> The [downloader](./downloader/downloader.py) was used to download the subset of dataset for training. 
+> The [downloader.py](./downloader/downloader.py) was used to download the subset of dataset for training. 
 
 ### 2.1 Source Data
 
