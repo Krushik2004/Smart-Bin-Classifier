@@ -58,24 +58,16 @@ def load_model_and_processor():
     clip_model.eval()
 
     # Init your quantity-attention model
-    model = CLIPQuantityMatcher(
-        # clip_model_name=CLIP_MODEL_NAME,
-        # freeze_clip=True,  # CLIP is frozen
-    )
+    model = CLIPQuantityMatcher()
 
     # Load head weights (only custom layers)
     state = torch.load(MODEL_WEIGHTS, map_location=device)
     model.quantity_mlp.load_state_dict(state["quantity_mlp"])
-    # model.cls_token.data = state["cls_token"]
-    # model.ln1.load_state_dict(state["ln1"])
-    # model.attn.load_state_dict(state["attention"])
     model.classifier.load_state_dict(state["classifier"])
 
     model.to(device)
     model.eval()
 
-    # Attach the CLIP backbone
-    # model.clip = clip_model
 
     return model, processor, device
 
@@ -217,12 +209,6 @@ if done_clicked and st.session_state.order_items:
 
     st.markdown("---")
     st.markdown("## 🔍 Model Validation")
-
-    # Re-show final order
-    # final_order = pd.DataFrame(st.session_state.order_items)
-    # final_order = final_order.rename(columns={"item": "Item", "quantity": "Quantity"})
-    # st.subheader("Order Summary")
-    # st.table(final_order)
 
     # Pick a random bin image from 100 images
     image_path = get_random_image_path()
