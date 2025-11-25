@@ -181,7 +181,7 @@ The Streamlit frontend simulates a small “ordering + validation” workflow.
 
 1.	Item Catalog Dropdown
    
--	Loads ~38k unique item names from data/unique_item_names.json.
+-	Loads ~38k unique item names from [unique_item_names.json](./unique_item_names.json).
 -	Dropdown lets the user select one item at a time.
 
 2.	Quantity Selector
