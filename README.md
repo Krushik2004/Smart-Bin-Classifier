@@ -112,10 +112,12 @@ Instead of “classifying the whole bin”, we treat the problem as:
 A binary decision per (bin image, item name, requested quantity).
 
 For each tuple (image, item_name, required_quantity):
+
 	•	Label = 1 if the bin contains that item with bin_quantity >= required_quantity.
 	•	Label = 0 otherwise (wrong item or insufficient quantity).
 
 This lets us:
+
 	•	Generalize to new/unseen items (through text names).
 	•	Use powerful pretrained vision-language models (CLIP).
 	•	Scale to many item types without training a detector for each ASIN.
