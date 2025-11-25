@@ -76,3 +76,13 @@ Each bin is represented by:
   },
   "EXPECTED_QUANTITY": 3
 }
+```
+
+## 2.2 Metadata Parsing
+
+We build a **flattened item-level table** df_items:
+
+| image_id | asin       | item_name                                      | bin_quantity |
+| -------- | ---------- | ---------------------------------------------- | ------------ |
+| 12345    | B00S81WTMA | MelodySusie 24W LED Nail Dryer ...             | 2            |
+| 12345    | B014F6ODIY | Deconovo Thermal Insulated Grommet Blackout... | 1            |
