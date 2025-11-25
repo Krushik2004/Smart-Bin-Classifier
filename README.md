@@ -22,27 +22,6 @@ This project addresses the following core objective:
 
 > Given a **bin image** and a **customer order** (items + quantities), determine **for each ordered item** whether the bin contains **at least the requested quantity** of that item.
 
-### Key Goals
-
-1. **Understand the dataset & task**  
-   - Explore the Amazon Bin-Image Dataset (images + metadata).  
-   - Understand the structure of bin contents and item-level metadata.
-
-2. **Build a multimodal model**  
-   - Use visual features from bin images.  
-   - Use textual descriptions of item names.  
-   - Use numeric information (requested quantity).  
-
-3. **Design a practical web UI**  
-   - Allow a user to “place an order” from a catalog of items.  
-   - Randomly sample a bin image and run the model.  
-   - Visually indicate which items/quantities match and which do not.
-
-4. **Document end-to-end ML lifecycle**  
-   - Architecture & design decisions  
-   - Training, hyperparameters & evaluation  
-   - MLOps considerations & future improvements  
-
 ---
 
 ## 2. Dataset & Preprocessing
@@ -186,30 +165,36 @@ The Streamlit frontend simulates a small “ordering + validation” workflow.
 ### 7.1 Main Features
 
 1.	Item Catalog Dropdown
-	•	Loads ~38k unique item names from data/unique_item_names.json.
-	•	Dropdown lets the user select one item at a time.
+   
+		•	Loads ~38k unique item names from data/unique_item_names.json.
+		•	Dropdown lets the user select one item at a time.
+
 2.	Quantity Selector
-	•	A dropdown (1–20) for selecting quantity.
-	•	Max 10 unique items per order.
+   
+		•	A dropdown (1–20) for selecting quantity.
+		•	Max 10 unique items per order.
 3.	Order Management
    
-	•	“Add item” button:
-	•	Adds the current (item, quantity) pair to the order.
-	•	Displays the “Current Order” table.
-	•	“Done” button:
-	•	Finalizes the order.
-	•	Randomly selects a bin image (from [bin-images](./bin-images) which has a subset 0f 100 images).
-	•	Sends each (image, item_name, quantity) to the model.
-	•	Displays the model outputs in a results table (separate from the order input section).
-	•	“Clear” button:
-	•	Resets the order.
-	•	Clears the selected image and results.
-	•	Resets UI state (st.session_state).
+		•	“Add item” button:
+		•	Adds the current (item, quantity) pair to the order.
+		•	Displays the “Current Order” table.
+		•	“Done” button:
+		•	Finalizes the order.
+		•	Randomly selects a bin image (from [bin-images](./bin-images) which has a subset 0f 100 images).
+		•	Sends each (image, item_name, quantity) to the model.
+		•	Displays the model outputs in a results table (separate from the order input section).
+		•	“Clear” button:
+		•	Resets the order.
+		•	Clears the selected image and results.
+		•	Resets UI state (st.session_state).
 4.	Bin Image Display
-	•	Shows a randomly selected bin image under the results.
-	•	Displayed at a fixed width and height and centered in the layout.
-5.	Model Output Table
-	•	Columns: Item, Quantity, Match, Confidence
-	•	Match column shows:
-		•	✅ if model prediction ≥ 0.5
-		•	❌ otherwise
+   
+		•	Shows a randomly selected bin image under the results.
+		•	Displayed at a fixed width and height and centered in the layout.
+
+6.	Model Output Table
+   
+		•	Columns: Item, Quantity, Match, Confidence
+		•	Match column shows:
+			•	✅ if model prediction ≥ 0.5
+			•	❌ otherwise
