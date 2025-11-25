@@ -116,3 +116,16 @@ This lets us:
 	•	Generalize to new/unseen items (through text names).
 	•	Use powerful pretrained vision-language models (CLIP).
 	•	Scale to many item types without training a detector for each ASIN.
+
+## 4. Model Architecture
+
+The image of the model architecture can be found in the model_graph.png file
+
+### 4.1 High-Level Architecture
+
+	1.	Image encoder → CLIP Vision Transformer
+	2.	Text encoder → CLIP Text Transformer
+	3.	Quantity encoder → small MLP
+	4.	Classifier → MLP → binary logit
+
+
