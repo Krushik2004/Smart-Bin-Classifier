@@ -122,7 +122,7 @@ This lets us:
 
 ## 4. Model Architecture
 
-The image of the model architecture can be found in the model_graph.png file
+The image of the model architecture can be found in the [model_graph.png](./model_graph.png) file
 
 ### 4.1 High-Level Architecture
 
