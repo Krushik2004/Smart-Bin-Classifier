@@ -128,4 +128,35 @@ The image of the model architecture can be found in the model_graph.png file
 	3.	Quantity encoder → small MLP
 	4.	Classifier → MLP → binary logit
 
+# 5. Training Data Construction
 
+Starting from df_items, we construct a training dataset of (image, item_name, required_quantity, label).
+
+For each bin image:
+	1.	Positive samples (correct item & sufficient quantity)
+	•	For each item in the bin with bin_quantity:
+	•	Sample required quantities q such that 1 ≤ q ≤ bin_quantity.
+	•	Label 1 (the bin satisfies the order for that item).
+	2.	Negative samples (correct item but too large quantity)
+	•	For the same item:
+	•	Sample a few q such that q > bin_quantity (e.g. up to 100).
+	•	Label 0.
+	3.	Negative samples (wrong item)
+	•	Pick random items not in the bin.
+	•	Sample q (e.g., 1–5).
+	•	Label 0.
+
+This yields ~hundreds of thousands of (image, item, quantity, label) samples.
+
+## 6. Evaluation
+
+### 6.1 Metrics
+
+On the test set, we compute:
+	•	Binary Cross-Entropy Loss: 0.2631
+	•	Accuracy: 0.8776
+	•	Precision: 0.7822
+	•	Recall: 0.8092
+	•	F1-score: 0.7955
+
+These are computed on per-sample (image, item_name, required_quantity) predictions.
