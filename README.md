@@ -163,11 +163,11 @@ These three embeddings are stacked onto each other and converted into a single e
 ### 6.1 Metrics
 
 On the test set, we compute:
-	•	Binary Cross-Entropy Loss: 0.2631
-	•	Accuracy: 0.8776
-	•	Precision: 0.7822
-	•	Recall: 0.8092
-	•	F1-score: 0.7955
+	-	Binary Cross-Entropy Loss: 0.2631
+	-	Accuracy: 0.8776
+	-	Precision: 0.7822
+	-	Recall: 0.8092
+	-	F1-score: 0.7955
 
 These are computed on per-sample (image, item_name, required_quantity) predictions.
 
