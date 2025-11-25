@@ -74,6 +74,7 @@ We build a **flattened item-level table** df_items:
 | 12345    | B014F6ODIY | Deconovo Thermal Insulated Grommet Blackout... | 1            |
 
 Processing details:
+
 	•	Extract BIN_FCSKU_DATA for each JSON file.
 	•	Construct item_name from name or normalizedName (fallback to asin if needed).
 	•	Skip entries where both name and normalizedName are missing/empty.
