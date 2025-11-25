@@ -213,5 +213,5 @@ The Streamlit frontend simulates a small “ordering + validation” workflow.
    
 - 	Columns: Item, Quantity, Match, Confidence
 - 	Match column shows:
-	•	✅ if model prediction ≥ 0.5
-	•	❌ otherwise
+	-  if model prediction ≥ 0.5
+	-	❌ otherwise
