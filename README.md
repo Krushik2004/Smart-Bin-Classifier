@@ -125,18 +125,23 @@ This lets us:
 Starting from df_items, we construct a training dataset of (image, item_name, required_quantity, label).
 
 For each bin image:
-	1.	Positive samples (correct item & sufficient quantity)
-	•	For each item in the bin with bin_quantity:
-	•	Sample required quantities q such that 1 ≤ q ≤ bin_quantity.
-	•	Label 1 (the bin satisfies the order for that item).
-	2.	Negative samples (correct item but too large quantity)
-	•	For the same item:
-	•	Sample a few q such that q > bin_quantity (e.g. up to 100).
-	•	Label 0.
-	3.	Negative samples (wrong item)
-	•	Pick random items not in the bin.
-	•	Sample q (e.g., 1–5).
-	•	Label 0.
+1.	Positive samples (correct item & sufficient quantity)
+	
+		-	For each item in the bin with bin_quantity:
+		-	Sample required quantities q such that 1 ≤ q ≤ bin_quantity.
+		-	Label 1 (the bin satisfies the order for that item).
+		
+2.	Negative samples (correct item but too large quantity)
+	
+		-	For the same item:
+		-	Sample a few q such that q > bin_quantity (e.g. up to 100).
+		-	Label 0.
+		
+3.	Negative samples (wrong item)
+   
+		-	Pick random items not in the bin.
+		-	Sample q (e.g., 1–5).
+		-	Label 0.
 
 This yields ~hundreds of thousands of (image, item, quantity, label) samples.
 
@@ -163,6 +168,7 @@ These three embeddings are stacked onto each other and converted into a single e
 ### 6.1 Metrics
 
 On the test set, we compute:
+
 	-	Binary Cross-Entropy Loss: 0.2631
 	-	Accuracy: 0.8776
 	-	Precision: 0.7822
@@ -184,6 +190,7 @@ The Streamlit frontend simulates a small “ordering + validation” workflow.
 	•	A dropdown (1–20) for selecting quantity.
 	•	Max 10 unique items per order.
 3.	Order Management
+   
 	•	“Add item” button:
 	•	Adds the current (item, quantity) pair to the order.
 	•	Displays the “Current Order” table.
