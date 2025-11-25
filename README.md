@@ -9,7 +9,7 @@ A multimodal AI system that verifies whether the contents of a warehouse bin ima
 
 ---
 
-**Dataset** 
+**Dataset**: [Amazon Bin-Image Dataset](https://registry.opendata.aws/amazon-bin-imagery/)
 
 ---
 ## 1. Problem Statement & Objectives
