@@ -10,6 +10,8 @@ A multimodal AI system that verifies whether the contents of a warehouse bin ima
 ---
 
 **Dataset**: [Amazon Bin-Image Dataset](https://registry.opendata.aws/amazon-bin-imagery/)
+**Deployed Streamlit Websit Link**: [Streamlit Website](https://smart-bin-classifier-iwiks75ayyfsekvms8nxgz.streamlit.app)
+**EDA Documentation Directory**: [EDA Documentation can be found here]
 
 ---
 ## 1. Problem Statement & Objectives
