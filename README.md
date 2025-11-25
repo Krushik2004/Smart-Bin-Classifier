@@ -9,6 +9,9 @@ A multimodal AI system that verifies whether the contents of a warehouse bin ima
 
 ---
 
+**Dataset** 
+
+---
 ## 1. Problem Statement & Objectives
 
 Modern e-commerce fulfillment centers pack multiple items into a single bin. Human or rule-based systems must ensure that:
