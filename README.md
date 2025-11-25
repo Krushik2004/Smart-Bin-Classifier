@@ -13,7 +13,7 @@ A multimodal AI system that verifies whether the contents of a warehouse bin ima
 
 **Deployed Streamlit Websit Link**: [Streamlit Website](https://smart-bin-classifier-iwiks75ayyfsekvms8nxgz.streamlit.app)
 
-**EDA Documentation Directory**: [EDA Documentation can be found here]()
+**EDA Code and Documentation** can be found here [here](./EDA)
 
 ---
 ## 1. Problem Statement & Objectives
