@@ -17,7 +17,7 @@ A multimodal AI system that verifies whether the contents of a warehouse bin ima
 
 **Training Code** can be found [here](./trainer)
 
-Find the **Demo video** for our Streamlit website: [here](./Demo.mp4)
+Find the **Demo video** for our Streamlit website: [here](./Demo.mp4) (download to watch it)
 
 ---
 ## 1. Problem Statement & Objectives
