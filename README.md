@@ -15,6 +15,8 @@ A multimodal AI system that verifies whether the contents of a warehouse bin ima
 
 **EDA Code and Documentation** can be found here [here](./EDA)
 
+**Training Code** can be found [here](./trainer)
+
 ---
 ## 1. Problem Statement & Objectives
 
