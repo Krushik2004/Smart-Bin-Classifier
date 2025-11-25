@@ -78,7 +78,7 @@ Each bin is represented by:
 }
 ```
 
-## 2.2 Metadata Parsing
+### 2.2 Metadata Parsing
 
 We build a **flattened item-level table** df_items:
 
@@ -86,3 +86,33 @@ We build a **flattened item-level table** df_items:
 | -------- | ---------- | ---------------------------------------------- | ------------ |
 | 12345    | B00S81WTMA | MelodySusie 24W LED Nail Dryer ...             | 2            |
 | 12345    | B014F6ODIY | Deconovo Thermal Insulated Grommet Blackout... | 1            |
+
+Processing details:
+	•	Extract BIN_FCSKU_DATA for each JSON file.
+	•	Construct item_name from name or normalizedName (fallback to asin if needed).
+	•	Skip entries where both name and normalizedName are missing/empty.
+	•	Only retain image_id, asin, item_name, bin_quantity.
+	•	Optionally, drop bin images with no valid items.
+
+#3. Methodology & Approach
+
+### 3.1 Why Not Multi-class Detection?
+	•	The number of unique ASINs/items is very high (~38k+).
+	•	The provided dataset metadata covers only a subset of items.
+	•	Annotated bounding boxes are not provided.
+	•	Training a multi-class object detector (YOLO/Faster-RCNN) for all ASINs is impractical.
+
+3.2 Reformulating the Task
+
+Instead of “classifying the whole bin”, we treat the problem as:
+
+A binary decision per (bin image, item name, requested quantity).
+
+For each tuple (image, item_name, required_quantity):
+	•	Label = 1 if the bin contains that item with bin_quantity >= required_quantity.
+	•	Label = 0 otherwise (wrong item or insufficient quantity).
+
+This lets us:
+	•	Generalize to new/unseen items (through text names).
+	•	Use powerful pretrained vision-language models (CLIP).
+	•	Scale to many item types without training a detector for each ASIN.
