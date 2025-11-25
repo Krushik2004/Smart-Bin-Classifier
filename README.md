@@ -191,18 +191,18 @@ The Streamlit frontend simulates a small “ordering + validation” workflow.
 
 4.	Order Management
    
-		•	“Add item” button:
-		•	Adds the current (item, quantity) pair to the order.
-		•	Displays the “Current Order” table.
-		•	“Done” button:
-		•	Finalizes the order.
-		•	Randomly selects a bin image (from [bin-images](./bin-images) which has a subset 0f 100 images).
-		•	Sends each (image, item_name, quantity) to the model.
-		•	Displays the model outputs in a results table (separate from the order input section).
-		•	“Clear” button:
-		•	Resets the order.
-		•	Clears the selected image and results.
-		•	Resets UI state (st.session_state).
+-	“Add item” button:
+-	Adds the current (item, quantity) pair to the order.
+-	Displays the “Current Order” table.
+-	“Done” button:
+-	Finalizes the order.
+-	Randomly selects a bin image (from [bin-images](./bin-images) which has a subset 0f 100 images).
+-	Sends each (image, item_name, quantity) to the model.
+-	Displays the model outputs in a results table (separate from the order input section).
+-	“Clear” button:
+-	Resets the order.
+-	Clears the selected image and results.
+-	Resets UI state (st.session_state).
 
 5.	Bin Image Display
    
